@@ -1,7 +1,7 @@
 module "ec2" {
   source                    = "terraform-aws-modules/ec2-instance/aws"
   name                      = "lab-terraform-aws"
-  instance_count            = 1
+  instance_count            = var.instance_count
   ami                       = data.aws_ami.amazon_linux.id
   instance_type             = var.ec2_instance_type
   key_name                  = var.key_pair_name
